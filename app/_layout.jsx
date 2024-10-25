@@ -6,8 +6,8 @@ import { useCallback, useEffect, useState } from 'react';
 
 const RootLayout = () => {
 
-    // Keep the splash screen visible while we fetch resources
-    SplashScreen.preventAutoHideAsync();
+  // Keep the splash screen visible while we fetch resources
+  SplashScreen.preventAutoHideAsync();
 
   const [fontsLoaded, error] = useFonts({
     "Poppins-Black": require("../assets/fonts/Poppins-Black.ttf"),
@@ -23,16 +23,20 @@ const RootLayout = () => {
   })
 
   useEffect(() => {
-    if(error) throw error;
+    if (error) throw error;
 
-    if(fontsLoaded) SplashScreen.hideAsync();
+    if (fontsLoaded) SplashScreen.hideAsync();
   }, [fontsLoaded, error]);
 
-  if(!fontsLoaded && !error) return null;
+  if (!fontsLoaded && !error) return null;
 
   return (
     <Stack>
       <Stack.Screen name="index" options={{ headerShown: false }} />
+      <Stack.Screen name="(auth)" options={{ headerShown: false }} />
+      <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
+      {/* <Stack.Screen name="/search/[query]" options={{ headerShown: false }} /> */}
+
     </Stack>
   );
 };
