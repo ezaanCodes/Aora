@@ -20,7 +20,7 @@
         "foregroundImage": "./assets/images/adaptive-icon.png",
         "backgroundColor": "#ffffff"
       },
-      "package": "com.ezaan.aora"
+      "package":"com.jsm.aora"
     },
     "web": {
       "bundler": "metro",
